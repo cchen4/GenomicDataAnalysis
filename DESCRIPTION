@@ -1,0 +1,10 @@
+Package: gda
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.00.01
+Date: 2015-09-09
+Author: Chongshu Chen
+Maintainer: C C <chc158.chen@gmail.com>
+Description: Generate a sample of x random variable from exponential distribution and output the mean, median, variance, and lambda in a list
+License: MIT
+LazyData: TRUE
