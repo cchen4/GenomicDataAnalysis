@@ -1,0 +1,67 @@
+---
+title: "Simulated data from exponential distribution and estimate key parameters"
+author: "[Chongshu Chen]()"
+date: "`r Sys.Date()`"
+vignette: >
+  %\VignetteIndexEntry{Simulated data from exponential distribution and estimate key parameters}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}  
+output: 
+  BiocStyle::html_document
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.width=12, fig.height=8, 
+                      warning=FALSE, message=FALSE)
+```
+
+# Introduction
+
+In this vignette we demonstrate the functionality of the r package. This package uses the simulated data from the exponential distribution with owner specifying the parameter $\lambda$. With simulated data, we estimate the key parameters and compare it to therotical estimation from exponetial distribution. 
+
+## Background
+
+Exponential distribution has been a well known distribution for statistical inference. We frequently generate data from the distribution from the R package with existing R function, rexp. We developed r package "gda", using the simulated data set from rexp in R package to demonstrate the difference from simulated data and therotical values.
+
+# Example
+
+## Data Sets
+
+In the following, we will use two data sets included in the package. The first one is data set with parameter $\lambda$ =2 and sample size =200. Another data set is sample from a parameter $\lambda$ = 2 and sample size =2000. 
+
+We first load the package.
+
+```{r load_gda}
+## Load libraries
+library('gda')
+```
+
+We use the the function expdistn to generate the table of sample estimation and actual values under exponential distribution with different sample sizes
+
+```{r expdistn_200}
+expdistn(n=200, lam=1.25)
+```
+
+```{r expdistn_2000}
+expdistn(n=2000, lam=1.25)
+```
+
+Tables of results will be generated to compare the sample estimation under sample size =200 and sample size of 2000.
+
+We can futher investigate how the sample size affect the parameter estimation
+```{r plotdistn}
+## create a set of sample size
+n1 <- seq (100, 10000, by = 500)
+
+##
+plotdistn(n1, lam=1.25)
+```
+
+# Comparing the sample estimations to their theoretical values
+We focus on compare the two data sets that are sampled from exponential distribution with different sample sizes. gda package was designed to allow researchers to select their own lambda value for exponential distribution and compare the sample estimations to the theoretical value under exponential distribution. We anticipate that this package will facilitate the comparison of sample size effect on the parameter estimation. 
+
+# Session Info
+```{r session_info}
+sessionInfo()
+```
+

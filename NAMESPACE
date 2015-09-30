@@ -1,0 +1,2 @@
+importFrom(stats, rexp)
+exportPattern("^[[:alpha:]]+")
