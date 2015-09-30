@@ -1,0 +1,14 @@
+Package: gda
+Type: Package
+Title: Simulated data from exponential distribution and estimate key parameters
+Version: 0.00.01
+Date: 2015-09-29
+Description: Generate a sample from exponential distribution and output the key estimation in a list
+Author: Chongshu Chen
+Maintainer: C C <chc158.chen@gmail.com>
+Depends: R (>= 3.2.0)
+Imports: stats
+VignetteBuilder: knitr
+Suggests: RUnit, knitr, rmarkdown, BiocGenerics
+License: MIT
+LazyData: TRUE
